@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patel's Kitchen - Menu</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="full-page">
+        <div class="header">
+            <div class="nav-container">
+                <a href="home.html">
+                <img src="images/New logo.png" alt="Logo" class="nav-logo">
+                </a>
+        
+                <div class="nav-bar">
+                    <a href="home.html">Home</a>
+                    <a href="#" class="active">Menu</a>
+                    <a href="order.html">Online Order</a>
+                    <a href="contact.html">Contact us</a>
+                    <a href="login.html">Login</a>
+                </div>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <div class="menu-container">
+                <h1 class="menu-title">Our Menu</h1>
+                
+                <!-- Search bar for menu -->
+                <div class="menu-search">
+                    <input type="text" id="menuSearch" placeholder="Search menu items...">
+                    <i class="fas fa-search"></i>
+                </div>
+                
+                <!-- Filter buttons -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Items</button>
+                    <button class="filter-btn" data-filter="indian">Indian</button>
+                    <button class="filter-btn" data-filter="italian">Italian</button>
+                    <button class="filter-btn" data-filter="mexican">Mexican</button>
+                </div>
+                
+                <!-- Sub-category buttons -->
+                <div class="sub-filter-buttons">
+                    <button class="sub-filter-btn active" data-subfilter="all">All</button>
+                    <button class="sub-filter-btn" data-subfilter="main">Main Course</button>
+                    <button class="sub-filter-btn" data-subfilter="desserts">Desserts</button>
+                    <button class="sub-filter-btn" data-subfilter="beverages">Beverages</button>
+                </div>
+                
+                <!-- Menu Items Grid -->
+                <div class="menu-grid">
+                    <!-- Indian Main Course Items -->
+                    <div class="menu-card" data-category="indian" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/paneerbuttermasala.webp" alt="Paneer Butter Masala">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Paneer Butter Masala</h3>
+                            <p class="cuisine-type">Indian Main</p>
+                            <p class="description">Creamy paneer cubes in rich tomato gravy with aromatic spices</p>
+                            <div class="price-order">
+                                <span class="price">$14.99</span>
+                                <button class="order-btn" onclick="addToCart('Paneer Butter Masala', 14.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-card" data-category="indian" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/dal-makhani.jpeg" alt="Dal Makhani">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Dal Makhani</h3>
+                            <p class="cuisine-type">Indian Main</p>
+                            <p class="description">Slow-cooked black lentils in creamy tomato sauce</p>
+                            <div class="price-order">
+                                <span class="price">$12.99</span>
+                                <button class="order-btn" onclick="addToCart('Dal Makhani', 12.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="indian" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/Vegetable-Biryani.webp" alt="Vegetable Biryani">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Vegetable Biryani</h3>
+                            <p class="cuisine-type">Indian Main</p>
+                            <p class="description">Fragrant basmati rice with mixed vegetables and aromatic spices</p>
+                            <div class="price-order">
+                                <span class="price">$15.99</span>
+                                <button class="order-btn" onclick="addToCart('Vegetable Biryani', 15.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="indian" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/aloo-gobi.jpeg" alt="Aloo Gobi">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Aloo Gobi</h3>
+                            <p class="cuisine-type">Indian Main</p>
+                            <p class="description">Spiced cauliflower and potato curry with traditional herbs</p>
+                            <div class="price-order">
+                                <span class="price">$11.99</span>
+                                <button class="order-btn" onclick="addToCart('Aloo Gobi', 11.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="indian" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/paalak-paneer.jpeg" alt="Palak Paneer">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Palak Paneer</h3>
+                            <p class="cuisine-type">Indian Main</p>
+                            <p class="description">Fresh spinach curry with cottage cheese cubes</p>
+                            <div class="price-order">
+                                <span class="price">$13.99</span>
+                                <button class="order-btn" onclick="addToCart('Palak Paneer', 13.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Italian Main Course Items -->
+                    <div class="menu-card" data-category="italian" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/Margherita.jpg" alt="Margherita Pizza">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Margherita Pizza</h3>
+                            <p class="cuisine-type">Italian Main</p>
+                            <p class="description">Classic pizza with fresh mozzarella, tomato sauce, and fresh basil</p>
+                            <div class="price-order">
+                                <span class="price">$14.99</span>
+                                <button class="order-btn" onclick="addToCart('Margherita Pizza', 14.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-card" data-category="italian" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/chicken-alfredo.jpeg" alt="Chicken Alfredo">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Chicken Alfredo</h3>
+                            <p class="cuisine-type">Italian Main</p>
+                            <p class="description">Creamy fettuccine pasta with grilled chicken in rich alfredo sauce</p>
+                            <div class="price-order">
+                                <span class="price">$17.99</span>
+                                <button class="order-btn" onclick="addToCart('Chicken Alfredo', 17.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="italian" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/meat-lasgna.jpeg" alt="Meat Lasagna">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Meat Lasagna</h3>
+                            <p class="cuisine-type">Italian Main</p>
+                            <p class="description">Layered pasta with ground beef, cheese, and marinara sauce</p>
+                            <div class="price-order">
+                                <span class="price">$19.99</span>
+                                <button class="order-btn" onclick="addToCart('Meat Lasagna', 19.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="italian" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/caesr-salad.jpeg" alt="Caesar Salad">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Caesar Salad</h3>
+                            <p class="cuisine-type">Italian Main</p>
+                            <p class="description">Fresh romaine lettuce with caesar dressing, croutons, and parmesan</p>
+                            <div class="price-order">
+                                <span class="price">$9.99</span>
+                                <button class="order-btn" onclick="addToCart('Caesar Salad', 9.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Mexican Main Course Items -->
+                    <div class="menu-card" data-category="mexican" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/chicken-taco.jpeg" alt="Chicken Tacos">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Chicken Tacos</h3>
+                            <p class="cuisine-type">Mexican Main</p>
+                            <p class="description">Three soft tortillas filled with seasoned chicken, lettuce, and salsa</p>
+                            <div class="price-order">
+                                <span class="price">$12.99</span>
+                                <button class="order-btn" onclick="addToCart('Chicken Tacos', 12.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="mexican" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/beef-burrito.jpeg" alt="Beef Burrito">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Beef Burrito</h3>
+                            <p class="cuisine-type">Mexican Main</p>
+                            <p class="description">Large tortilla wrapped with seasoned beef, rice, beans, and cheese</p>
+                            <div class="price-order">
+                                <span class="price">$13.99</span>
+                                <button class="order-btn" onclick="addToCart('Beef Burrito', 13.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="mexican" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/Cheese Quesadilla.jpeg" alt="Cheese Quesadilla">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Cheese Quesadilla</h3>
+                            <p class="cuisine-type">Mexican Main</p>
+                            <p class="description">Grilled tortilla filled with melted cheese and served with sour cream</p>
+                            <div class="price-order">
+                                <span class="price">$8.99</span>
+                                <button class="order-btn" onclick="addToCart('Cheese Quesadilla', 8.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="mexican" data-subcategory="main">
+                        <div class="menu-image">
+                            <img src="images/fajitas.jpeg" alt="Chicken Fajitas">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Chicken Fajitas</h3>
+                            <p class="cuisine-type">Mexican Main</p>
+                            <p class="description">Sizzling chicken strips with bell peppers and onions</p>
+                            <div class="price-order">
+                                <span class="price">$16.99</span>
+                                <button class="order-btn" onclick="addToCart('Chicken Fajitas', 16.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Indian Desserts -->
+                    <div class="menu-card" data-category="indian" data-subcategory="desserts">
+                        <div class="menu-image">
+                            <img src="images/gulab-jamun.jpeg" alt="Gulab Jamun">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Gulab Jamun</h3>
+                            <p class="cuisine-type">Indian Dessert</p>
+                            <p class="description">Soft milk dumplings in sweet rose-flavored syrup</p>
+                            <div class="price-order">
+                                <span class="price">$5.99</span>
+                                <button class="order-btn" onclick="addToCart('Gulab Jamun', 5.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="indian" data-subcategory="desserts">
+                        <div class="menu-image">
+                            <img src="images/rasmalai.jpeg" alt="Ras Malai">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Ras Malai</h3>
+                            <p class="cuisine-type">Indian Dessert</p>
+                            <p class="description">Soft cheese dumplings in sweetened milk with cardamom</p>
+                            <div class="price-order">
+                                <span class="price">$6.99</span>
+                                <button class="order-btn" onclick="addToCart('Ras Malai', 6.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Italian Desserts -->
+                    <div class="menu-card" data-category="italian" data-subcategory="desserts">
+                        <div class="menu-image">
+                            <img src="images/tiramishu.jpeg" alt="Tiramisu">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Tiramisu</h3>
+                            <p class="cuisine-type">Italian Dessert</p>
+                            <p class="description">Classic Italian coffee-flavored dessert with mascarpone cheese</p>
+                            <div class="price-order">
+                                <span class="price">$7.99</span>
+                                <button class="order-btn" onclick="addToCart('Tiramisu', 7.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="italian" data-subcategory="desserts">
+                        <div class="menu-image">
+                            <img src="images/gelato.jpeg" alt="Gelato">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Gelato</h3>
+                            <p class="cuisine-type">Italian Dessert</p>
+                            <p class="description">Creamy Italian ice cream with vanilla and chocolate flavors</p>
+                            <div class="price-order">
+                                <span class="price">$5.99</span>
+                                <button class="order-btn" onclick="addToCart('Gelato', 5.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mexican Desserts -->
+                    <div class="menu-card" data-category="mexican" data-subcategory="desserts">
+                        <div class="menu-image">
+                            <img src="images/churros.jpeg" alt="Churros">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Churros</h3>
+                            <p class="cuisine-type">Mexican Dessert</p>
+                            <p class="description">Crispy fried dough sticks dusted with cinnamon sugar</p>
+                            <div class="price-order">
+                                <span class="price">$6.99</span>
+                                <button class="order-btn" onclick="addToCart('Churros', 6.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="mexican" data-subcategory="desserts">
+                        <div class="menu-image">
+                            <img src="images/flan.jpeg" alt="Flan">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Flan</h3>
+                            <p class="cuisine-type">Mexican Dessert</p>
+                            <p class="description">Creamy caramel custard with vanilla and caramel sauce</p>
+                            <div class="price-order">
+                                <span class="price">$6.49</span>
+                                <button class="order-btn" onclick="addToCart('Flan', 6.49)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Indian Beverages -->
+                    <div class="menu-card" data-category="indian" data-subcategory="beverages">
+                        <div class="menu-image">
+                            <img src="images/mango-lassi.jpeg" alt="Mango Lassi">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Mango Lassi</h3>
+                            <p class="cuisine-type">Indian Beverage</p>
+                            <p class="description">Creamy yogurt drink blended with sweet mango pulp</p>
+                            <div class="price-order">
+                                <span class="price">$4.99</span>
+                                <button class="order-btn" onclick="addToCart('Mango Lassi', 4.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="indian" data-subcategory="beverages">
+                        <div class="menu-image">
+                            <img src="images/masala-chai.jpeg" alt="Masala Chai">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Masala Chai</h3>
+                            <p class="cuisine-type">Indian Beverage</p>
+                            <p class="description">Spiced tea with milk, cardamom, and aromatic spices</p>
+                            <div class="price-order">
+                                <span class="price">$3.49</span>
+                                <button class="order-btn" onclick="addToCart('Masala Chai', 3.49)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Italian Beverages -->
+                    <div class="menu-card" data-category="italian" data-subcategory="beverages">
+                        <div class="menu-image">
+                            <img src="images/italian-soda.jpeg" alt="Italian Soda">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Italian Soda</h3>
+                            <p class="cuisine-type">Italian Beverage</p>
+                            <p class="description">Refreshing sparkling water with fruit syrup</p>
+                            <div class="price-order">
+                                <span class="price">$3.99</span>
+                                <button class="order-btn" onclick="addToCart('Italian Soda', 3.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="italian" data-subcategory="beverages">
+                        <div class="menu-image">
+                            <img src="images/espresso.webp" alt="Espresso">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Espresso</h3>
+                            <p class="cuisine-type">Italian Beverage</p>
+                            <p class="description">Strong Italian coffee shot, perfect after meals</p>
+                            <div class="price-order">
+                                <span class="price">$2.99</span>
+                                <button class="order-btn" onclick="addToCart('Espresso', 2.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mexican Beverages -->
+                    <div class="menu-card" data-category="mexican" data-subcategory="beverages">
+                        <div class="menu-image">
+                            <img src="images/horchata.jpeg" alt="Horchata">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Horchata</h3>
+                            <p class="cuisine-type">Mexican Beverage</p>
+                            <p class="description">Sweet rice milk drink with cinnamon and vanilla</p>
+                            <div class="price-order">
+                                <span class="price">$4.49</span>
+                                <button class="order-btn" onclick="addToCart('Horchata', 4.49)">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="mexican" data-subcategory="beverages">
+                        <div class="menu-image">
+                            <img src="images/agua-fresca.jpeg" alt="Agua Fresca">
+                        </div>
+                        <div class="menu-details">
+                            <h3>Agua Fresca</h3>
+                            <p class="cuisine-type">Mexican Beverage</p>
+                            <p class="description">Fresh fruit water with lime and watermelon flavors</p>
+                            <div class="price-order">
+                                <span class="price">$3.99</span>
+                                <button class="order-btn" onclick="addToCart('Agua Fresca', 3.99)">Add to Cart</button>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+        <!-- Cart Modal -->
+
+        <div id="cartModal" class="cart-modal">
+            <div class="cart-content">
+                <div class="cart-header">
+                    <h2>Your Cart</h2>
+                    <span class="close-cart" onclick="toggleCart()">&times;</span>
+                </div>
+                <div id="cartItems" class="cart-items">
+
+                    <!-- Cart items will be populated here -->
+                </div>
+                <div class="cart-footer">
+                    <div class="cart-total">
+                        <strong>Total: $<span id="cartTotal">0.00</span></strong>
+                    </div>
+                    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 by Patel's Kitchen</p>
+        </div>
+    </div>
+
+    <script>
+        let cart = []; // array to store cart items
+        
+        $(document).ready(function() {
+            // Filter menu cards by main category
+            $('.filter-btn').click(function() {
+                $('.filter-btn').removeClass('active'); //remove previous active
+                $(this).addClass('active'); //Set clicked button as active
+                
+                const filter = $(this).data('filter'); //Get selected category
+                
+                if (filter === 'all') {             //show all cards
+                    $('.menu-card').show();
+                } else {
+                    $('.menu-card').hide();
+                    $(`.menu-card[data-category="${filter}"]`).show();  // Show only selected category
+                }
+            });
+            
+            // Search menu cards by name, description, or cuisine
+
+            $('#menuSearch').on('keyup', function() {
+                const searchTerm = $(this).val().toLowerCase();
+                
+                $('.menu-card').each(function() {
+                    const itemName = $(this).find('h3').text().toLowerCase();
+                    const itemDescription = $(this).find('.description').text().toLowerCase();
+                    const cuisineType = $(this).find('.cuisine-type').text().toLowerCase();
+                    
+                    // Show card if matches search, else hide
+
+                    if (itemName.includes(searchTerm) || 
+                        itemDescription.includes(searchTerm) || 
+                        cuisineType.includes(searchTerm)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            // Filter menu cards by sub-category
+
+            $('.sub-filter-btn').click(function() {
+                $('.sub-filter-btn').removeClass('active');
+                $(this).addClass('active');
+                
+                const subFilter = $(this).data('subfilter');
+                const activeCategoryFilter = $('.filter-btn.active').data('filter'); // Get the currently active main category filter
+                
+                $('.menu-card').hide(); // Hide all menu cards initially
+                
+                if (subFilter === 'all') {
+                    if (activeCategoryFilter === 'all') {
+                        $('.menu-card').show(); // Show all if both filters are 'all'
+                    } else {
+                        $(`.menu-card[data-category="${activeCategoryFilter}"]`).show(); // Show all for the active main category
+                    }
+                } else {
+                    if (activeCategoryFilter === 'all') {
+                        $(`.menu-card[data-subcategory="${subFilter}"]`).show(); // Show only subcategory if main category is 'all'
+                    } else {
+                        $(`.menu-card[data-category="${activeCategoryFilter}"][data-subcategory="${subFilter}"]`).show(); // Show based on both filters
+                    }
+                }
+            });
+
+            
+            // Card hover effects
+            $('.menu-card').hover(
+                function() {
+                    $(this).css('transform', 'translateY(-5px) scale(1.02)');
+                },
+                function() {
+                    $(this).css('transform', 'translateY(0) scale(1)');
+                }
+            );
+        });
+
+        // Add item to cart
+
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;  // Increase quantity if already in cart
+            } else {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });                            // Add new item
+            }
+            
+            updateCartDisplay();
+            showAddedAnimation(event.target);  // Show "Added!" effect 
+        }
+
+        // Show added animation
+
+        function showAddedAnimation(button) {
+            const originalText = button.textContent;
+            button.textContent = 'Added!';
+            button.style.backgroundColor = '#28a745';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.backgroundColor = '#D62839';
+            }, 1500);
+        }
+
+        // Update cart count and modal
+
+        function updateCartDisplay() {
+            const cartCount = document.getElementById('cartCount');
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
+            
+            if (totalItems > 0) {
+                cartCount.style.display = 'block';
+            } else {
+                cartCount.style.display = 'none';
+            }
+            
+            updateCartModal();
+        }
+
+        // Update cart modal with items and total
+
+        function updateCartModal() {
+            const cartItems = document.getElementById('cartItems');
+            const cartTotal = document.getElementById('cartTotal');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+                cartTotal.textContent = '0.00';
+                return;
+            }
+            
+            let html = '';
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                html += `
+                    <div class="cart-item">
+                        <div class="item-details">
+                            <h4>${item.name}</h4>
+                            <p>$${item.price.toFixed(2)} each</p>
+                        </div>
+                        <div class="quantity-controls">
+                            <button onclick="changeQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="changeQuantity(${index}, 1)">+</button>
+                        </div>
+                        <div class="item-total">
+                            $${itemTotal.toFixed(2)}
+                        </div>
+                        <button class="remove-item" onclick="removeFromCart(${index})">×</button>
+                    </div>
+                `;
+            });
+            
+            cartItems.innerHTML = html;
+            cartTotal.textContent = total.toFixed(2);
+        }
+
+        // Change quantity of item in cart
+
+        function changeQuantity(index, change) {
+            cart[index].quantity += change;
+            
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            
+            updateCartDisplay();
+        }
+
+        // Remove item from cart
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        // Toggle cart modal visibility
+
+        function toggleCart() {
+            const cartModal = document.getElementById('cartModal');
+            cartModal.style.display = cartModal.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Checkout cart
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+                return;
+            }
+            
+            alert('Thank you for your order! Total: $' + document.getElementById('cartTotal').textContent);
+            cart = [];
+            updateCartDisplay();
+            toggleCart();
+        }
+
+        // Close cart when clicking outside
+
+        window.onclick = function(event) {
+            const cartModal = document.getElementById('cartModal');
+            if (event.target === cartModal) {
+                cartModal.style.display = 'none';
+            }
+        }
+    </script>

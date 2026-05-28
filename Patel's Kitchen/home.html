@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patel's Kitchen - Authentic Indian Cuisine</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="full-page">
+        <div class="header">
+            <div class="nav-container">
+                <a href="home.html">
+                <img src="images/New logo.png" alt="Logo" class="nav-logo">
+                </a>
+        
+                <div class="nav-bar">
+                    <a href="#" class="active">Home</a>
+                    <a href="menu.html">Menu</a>
+                    <a href="order.html">Online Order</a>
+                    <a href="contact.html">Contact us</a>
+                    <a href="login.html">Login</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-content">
+            <section class="hero-section">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+            <h1>Patel's Kitchen</h1>
+            <div class="search-container">
+            <form id="searchForm" action="menu.html">
+                <input type="text" placeholder="Search our menu..." id="searchInput">
+                <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+            
+            <!-- Locations Section -->
+             
+            <section class="locations-section">
+                <h2 class="locations-title">Visit Our Locations</h2>
+                <div class="locations-grid">
+                    <a href="https://maps.google.com/maps?q=Patel's+Kitchen+Toronto" target="_blank" class="location-card location-toronto">
+                        <div class="location-bg"></div>
+                        <div class="location-name">Toronto</div>
+                    </a>
+                    
+                    <a href="https://maps.google.com/maps?q=Patel's+Kitchen+Brampton" target="_blank" class="location-card location-brampton">
+                        <div class="location-bg"></div>
+                        <div class="location-name">Brampton</div>
+                    </a>
+                    
+                    <a href="https://maps.google.com/maps?q=Patel's+Kitchen+Mississauga" target="_blank" class="location-card location-mississauga">
+                        <div class="location-bg"></div>
+                        <div class="location-name">Mississauga</div>
+                    </a>
+                    
+                    <a href="https://maps.google.com/maps?q=Patel's+Kitchen+Etobicoke" target="_blank" class="location-card location-etobicoke">
+                        <div class="location-bg"></div>
+                        <div class="location-name">Etobicoke</div>
+                    </a>
+
+                    <a href="https://maps.google.com/maps?q=Patel's+Kitchen+Scarborough" target="_blank" class="location-card location-scarborough">
+                        <div class="location-bg"></div>
+                        <div class="location-name">Scarborough</div>
+                    </a>
+
+                    <a href="https://maps.google.com/maps?q=Patel's+Kitchen+North+York" target="_blank" class="location-card location-northyork">
+                        <div class="location-bg"></div>
+                        <div class="location-name">North York</div>
+                    </a>
+                </div>
+            </section>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2025 by Patel's Kitchen</p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            // Search form handling
+            $('#searchForm').submit(function(e) {  // search button redirect to menu page with jquery
+                e.preventDefault(); 
+                const searchTerm = $('#searchInput').val().trim();
+                if(searchTerm) {
+                    window.location.href = `menu.html?search=${encodeURIComponent(searchTerm)}`;
+                } else {
+                    window.location.href = 'menu.html';
+                }
+            });
+            
+            // Card hover effect
+            $('.location-card').hover(
+                function() {
+                    $(this).css('transform', 'translateY(-5px) scale(1.02)');
+                },
+                function() {
+                    $(this).css('transform', 'translateY(0) scale(1)');
+                }
+            );
+        });
+    </script>
+</body>
+</html>
